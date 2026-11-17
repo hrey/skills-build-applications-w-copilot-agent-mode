@@ -5,6 +5,7 @@ const userSchema = new Schema({
   email: { type: String, required: true, trim: true, lowercase: true },
   team: { type: Schema.Types.ObjectId, ref: 'Team' },
   fitnessGoal: { type: String, required: true, trim: true },
+  
 });
 
 export const User = model('User', userSchema);
