@@ -102,6 +102,7 @@ describe('OctoFit data contract', () => {
       const seededMona = await User.findOne({ email: 'mona@example.com' });
       const seededTeam = await Team.findOne({ name: 'Octocats' });
       const retainedPreviousTeam = await Team.findById(previousTeam._id);
+      
       expect(seededMona).toBeTruthy();
       expect(seededTeam).toBeTruthy();
       expect(retainedPreviousTeam).toBeTruthy();
