@@ -10,7 +10,7 @@ Here's a recap of your accomplishments:
 - You implemented Mongoose models and repeatable seed data for four product capabilities.
 - You completed Express API behavior with validation, status codes, leaderboard ordering, and workout suggestions.
 - You built React routes that expose loading, empty, success, and error states through a shared API client.
-- You verified the integrated system and merged a reviewed pull request with test evidence.
+- You verified the integrated system and merged a reviewed pull request with test evidence!
 
 ### What's next?
 
