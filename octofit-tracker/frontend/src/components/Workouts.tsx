@@ -1,4 +1,5 @@
 import { CapabilityCard } from './CapabilityCard.js';
+import { getJson } from '../api/client.js';
 import { useApiResource } from '../hooks/useApiResource.js';
 
 type WorkoutSuggestion = { _id?: string; title: string; focus?: string; minutes?: number; difficulty?: string; reason?: string };
@@ -7,7 +8,7 @@ const demoUserEmail = 'mona@example.com';
 
 export default function Workouts() {
   const path = `/api/workouts/suggestions/${encodeURIComponent(demoUserEmail)}`;
-  const { data, error, loading } = useApiResource<{ suggestions: WorkoutSuggestion[] }>(path);
+  const { data, error, loading } = useApiResource(path, getJson<{ suggestions: WorkoutSuggestion[] }>);
   return <CapabilityCard title="Workout suggestions" description={`Recommendations for ${demoUserEmail}.`}>
     {loading && <p role="status">Loading workout suggestions...</p>}
     {error && <p role="alert">Unable to load workout suggestions: {error}</p>}
